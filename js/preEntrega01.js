@@ -1,3 +1,4 @@
+/*
 //FUNCIONES 
 function saludar(nombre) {
     alert("Hola " + nombre + ", bienvenido al sitio para comprar productos");
@@ -43,3 +44,5 @@ if (producto1.confirmacion === "FINALIZAR") {
 }
 
 console.log("Proceso finalizado");
+
+*/

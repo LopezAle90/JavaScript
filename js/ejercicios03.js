@@ -241,20 +241,227 @@ for (let i = 1; i <= numero; i++) {  // Bucle externo controla las filas
 //12) Realizar un programa que le pida al usuario cuántos números quiere ingresar y entre todos los que ingrese calcular cual es el mayor, el menor y la media.
 
 /*
-let numerosaIngresar = parseInt(prompt("Ingrese cantidad de numeros a ingresar"))
+const numerosaIngresar = parseInt(prompt("Ingrese cantidad de numeros a ingresar"))
+let serieNumerica = ""
+let numeroMenor
+let numeroMayor
+let sumaTotal = 0
 let contadorDeNumeros = 0
 
-console.log ("Los numeros a ingresar son " + numerosaIngresar)
+console.log("Los numeros a ingresar son " + numerosaIngresar)
 
-while (numerosaIngresar > contadorDeNumeros){
-    numeroIngresado = parseInt(prompt("Ingrese un numero"))
+while (numerosaIngresar > contadorDeNumeros) {
+    let numeroIngresado = parseInt(prompt("Ingrese un numero")) // 2 // 5 // 7 // 1 // 14
     contadorDeNumeros++
-    console.log (numeroIngresado)
+    serieNumerica += numeroIngresado + " "
+    sumaTotal += numeroIngresado
+
+    if (contadorDeNumeros === 1) {
+        numeroMayor = numeroIngresado;
+        numeroMenor = numeroIngresado;
+    }
+
+    else {
+        if (numeroIngresado > numeroMayor) {
+            numeroMayor = numeroIngresado
+        }
+
+        if (numeroIngresado < numeroMenor) {
+            numeroMenor = numeroIngresado
+        }
+    }
 }
 
-let numeroMayor = numeroIngresado
-let numeroMenor = numeroIngresado
+const promedio = sumaTotal / numerosaIngresar
 
+console.log("Se ingresaron los numeros " + serieNumerica)
+console.log("El numero mayor es " + numeroMayor) 
+console.log("El numero menor es " + numeroMenor) 
+console.log ("Promedio " + promedio)
+
+*/
+
+//13) Hacer un programa en donde el usuario ingrese un mes y se le muestre en pantalla a qué estación pertenece.
+
+
+/*
+const mesIngresado = prompt ("Ingrese un mes") .toLowerCase()
+
+let estacion
+
+if (mesIngresado == "diciembre" || mesIngresado == "enero" || mesIngresado == "febrero") {
+    estacion = "verano"
+
+    alert ("El mes " + mesIngresado + " pertenece a la estacion " + estacion)
+
+}
+
+else if (mesIngresado == "marzo" || mesIngresado == "abril" || mesIngresado == "mayo") {
+    estacion = "otoño"
+
+    alert ("El mes " + mesIngresado + " pertenece a la estacion " + estacion)
+
+}
+
+else if (mesIngresado == "junio" || mesIngresado == "julio" || mesIngresado == "agosto") {
+    estacion = "inverno"
+
+    alert ("El mes " + mesIngresado + " pertenece a la estacion " + estacion)
+
+}
+
+else if (mesIngresado == "septiembre" || mesIngresado == "octubre" || mesIngresado == "noviembre") {
+    estacion = "primavera"
+
+    alert ("El mes " + mesIngresado + " pertenece a la estacion " + estacion)
+
+}
+
+else {
+    alert ("El mes ingresado no es valido")
+}
+
+*/
+
+// 14) Idem ejercicio anterior pero en este caso que se le muestre la cantidad de días que tiene el mes
+
+/*
+
+const mesIngresado = prompt ("Ingrese un mes") .toLowerCase()
+
+let diasMes
+
+if (mesIngresado == "enero" || mesIngresado == "marzo" || mesIngresado == "julio" || mesIngresado == "agosto" || mesIngresado == "octubre" || mesIngresado == "diciembre") {
+    diasMes = 31
+
+    alert ("El mes " + mesIngresado + " tiene " + diasMes + " dias")
+
+}
+
+else if (mesIngresado == "abril" || mesIngresado == "junio" || mesIngresado == "septiembre" || mesIngresado == "noviembre" ) {
+    diasMes = 30
+
+    alert ("El mes " + mesIngresado + " tiene " + diasMes + " dias")
+
+}
+
+else if (mesIngresado == "febrero") {
+    diasMes = 28
+
+    alert ("El mes " + mesIngresado + " tiene " + diasMes + " dias")
+
+}
+
+else {
+    alert ("El mes ingresado no es valido")
+}
+
+*/
+
+// 15) Realizar un programa en donde el usuario ingrese un día de la semana y se le muestre en pantalla:
+/*
+a) Si es el comienzo de la semana
+b) Si es fin de semana
+c) Si es mitad de semana
+*/
+
+/*
+const diaSemana = prompt ("Ingrese un dia de semana") .toLowerCase()
+
+let semana
+
+if (diaSemana == "lunes" || diaSemana == "martes") {
+    semana = "comienzo de semana"
+
+    alert ("El dia ingresado " + diaSemana + " se ubica en " + semana)
+}
+
+else if (diaSemana == "miercoles" || diaSemana == "jueves") {
+    semana = "mitad de semana"
+
+    alert ("El dia ingresado " + diaSemana + " se ubica en " + semana)
+}
+
+else if (diaSemana == "viernes" || diaSemana == "sabado" || diaSemana == "domingo") {
+    semana = "fin de semana"
+
+    alert ("El dia ingresado " + diaSemana + " se ubica en " + semana)
+}
+
+*/
+
+// 16) Hacer un programa en el cual se ingrese una figura (Triángulo, cuadrado, círculo y rectángulo) y dependiendo que figura elija, se le pida base, altura o radio y calcular el área.
+
+/*
+let figura = prompt ("Ingrese triangulo, cuadrado, circulo o rectangulo")
+let base = 0
+let altura = 0
+let lado = 0
+let radio = 0
+
+while (figura != "triangulo" && figura != "cuadrado" && figura != "circulo" && figura != "rectangulo") {
+    alert ("figura incorrecta")
+    figura = prompt ("Ingrese triangulo, cuadrado, circulo o rectangulo")
+}
+    
+if (figura == "triangulo") {
+    base = parseInt(prompt("Ingrese la base del triangulo"))
+    altura = parseInt(prompt("Ingrese la altura del triangulo"))
+    const areaTriangulo = (base * altura) / 2
+    alert ("El area del triangulo es de " + areaTriangulo)
+
+}
+
+else if (figura == "cuadrado") {
+    lado = parseInt(prompt("Ingrese el lado del cuadrado"))
+    const areaCuadrado = lado ** 2
+    alert ("El area del cuadrado es de " + areaCuadrado)
+}
+
+else if (figura == "circulo") {
+    radio = parseInt(prompt("Ingrese el radio del circulo"))
+    const areaCirculo = 3.14 * (radio ** 2)
+    alert ("El area del Circulo es de " + areaCirculo)
+}
+
+else if (figura == "rectangulo") {
+    base = parseInt(prompt("Ingrese la base del Rectangulo"))
+    altura = parseInt(prompt("Ingrese la altura del Rectangulo"))
+    const areaRectangulo = (base * altura)
+    alert ("El area del Rectangulo es de " + areaRectangulo)
+}
+*/
+
+// 17) Realizar un programa en el cual se ingrese el departamento del trabajador (A, B, C o D), la cantidad de horas trabajadas y se calcule cuánto se le tiene que pagar:
+/*
+    a) Trabajadores del departamento A: Cobran $25 la hora
+    b) Trabajadores del departamento B: Cobran $50 la hora
+    c) Trabajadores del departamento C: Cobran $75 la hora
+    d) Trabajadores del departamento D: Cobran $100 la hora
+*/
+
+/*
+let departamentoDelTrabajador = (prompt ("Ingrese el departamento del trabajador: A - B - C - D "))
+let horasTrabajadas = parseInt(prompt("Ingrese las horas trabajadas"))
+let pagar = 0
+
+if (departamentoDelTrabajador == "A") {
+    pagar = horasTrabajadas * 25
+}
+
+else if (departamentoDelTrabajador == "B") {
+    pagar = horasTrabajadas * 50
+}
+
+else if (departamentoDelTrabajador == "C") {
+    pagar = horasTrabajadas * 75
+}
+
+else if (departamentoDelTrabajador == "D") {
+    pagar = horasTrabajadas * 100
+}
+
+console.log ("El total a pagar por " + horasTrabajadas + " en el departamento " + departamentoDelTrabajador + " es de $" + pagar )
 */
 
 
@@ -263,7 +470,27 @@ let numeroMenor = numeroIngresado
 
 
 
-        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
