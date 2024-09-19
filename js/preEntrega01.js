@@ -44,5 +44,4 @@ if (producto1.confirmacion === "FINALIZAR") {
 }
 
 console.log("Proceso finalizado");
-
 */
