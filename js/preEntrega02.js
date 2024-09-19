@@ -1,92 +1,91 @@
-// ARRAYS - OBJETOS - METODOS DE ORDEN SUPERIOR
+// FUNCIONES
 
-// AL MENOS UN METODO DE BUSQUEDA Y FILTRADO
-// AL MENOS UN ARRAY - ok
-// AL MENOS UN OBJETO - ok
-// AL MENOS UN CICLO
-
-
-
-const listaProductos = [
-    { Producto: "Arroz", Precio: 1500, },
-    { Producto: "Leche", Precio: 1500, },
-    { Producto: "Fideos", Precio: 1500, },
-    { Producto: "Agua", Precio: 1500, },
-    { Producto: "Harina", Precio: 1500, },
-    { Producto: "Chocolate", Precio: 1500, },
-    { Producto: "Hamburguesa", Precio: 1500, },
-    { Producto: "Salchicha", Precio: 1500, },
-    { Producto: "Gaseosa", Precio: 1500, },
-    { Producto: "Jamon", Precio: 1500, }
-];
-
-const carrito = [];
-
-// PROGRAMA
-
-// PEDIDO NOMBRE
-
-const nombrePersona = prompt("Ingrese su nombre")
-
-alert("Bienvenido " + nombrePersona + " al sitio de compras de productos")
-
-
-let mensaje = "" // VARIABLE PARA ALMACENAR PRODUCTOS DISPONIBLES
-
-// FUNCION PARA RECORRER LA LISTA DE PRODUCTOS
-listaProductos.forEach(producto => {
-    mensaje += producto.Producto + " - $" + producto.Precio + "\n"
-})
-
-// SE MUESTRA LISTADO DE PRODUCTOS DISPONIBLES
-alert("Productos disponibles para comprar:\n" + mensaje);
-
-// BUSQUEDA DE PRODUCTO
-let buscarProducto = prompt("Producto a buscar (Escribe 'Fin' para terminar la selección de este tipo)");
-
-// CICLO DE SELECCIÓN DEL PRODUCTO
-while (buscarProducto.toLowerCase() != "fin") {
-
-    // PRODUCTO EXISTE EN LISTA 
-    const resultadoProducto = listaProductos.find((el) => el.Producto.toLowerCase() === buscarProducto.toLowerCase());
-
-    if (resultadoProducto) {
-        const cantidadProducto = parseInt(prompt("Cantidad de producto"));
-        const productoConPrecioModificado = {
-            Producto: resultadoProducto.Producto,
-            Precio: resultadoProducto.Precio * cantidadProducto,
-        };
-
-        // AGREGO AL CARRITO
-        carrito.push(productoConPrecioModificado);
-        alert("Producto agregado al carrito")
-
-    } else {
-        alert("Producto no encontrado \nProductos disponibles para comprar: \n" + mensaje);
-    }
-
-    buscarProducto = prompt("Producto a buscar (Escribe 'Fin' para terminar la selección de este tipo)");
+function saludarUsuario() {
+    const nombre = prompt("Ingrese su nombre")
+    alert("Bienvenido " + nombre + " al sitio de compras de productos")
+    return nombre
 }
 
-alert("Descuento del 15% a productos que superen los $5000");
+function mostrarProductosDisponibles(productos) {
+    let mensaje = ""
+    productos.forEach(producto => {
+        mensaje += producto.Producto + " - $" + producto.Precio + "\n"
+    })
+    alert("Productos disponibles para comprar:\n" + mensaje)
+}
 
-// Filtrar productos que superen los $5000
-const productosConDescuento = carrito.filter((el) => el.Precio > 5000);
+function seleccionarProducto() {
+    let productoBuscado = prompt("Producto a buscar (Escribe 'Fin' para terminar la selección)")
+    
+    while (productoBuscado.toLowerCase() !== "fin") {
+        const productoEncontrado = listaProductos.find((el) => el.Producto.toLowerCase() === productoBuscado.toLowerCase())
 
-// Aplicar descuento del 15% a los productos filtrados
-productosConDescuento.forEach((el) => {
-    el.Precio = el.Precio * 0.85; // Aplica el 15% de descuento
-});
+        if (productoEncontrado) {
+            const cantidad = parseInt(prompt("Cantidad de producto"))
+            agregarAlCarrito(productoEncontrado, cantidad)
+        } else {
+            alert("Producto no encontrado")
+            mostrarProductosDisponibles(listaProductos); // Mostrar nuevamente los productos disponibles
+        }
+
+        productoBuscado = prompt("Producto a buscar (Escribe 'Fin' para terminar la selección)")
+    }
+}
+
+function agregarAlCarrito(producto, cantidad) {
+    const productoModificado = {
+        Producto: producto.Producto,
+        Precio: producto.Precio * cantidad
+    }
+    carrito.push(productoModificado)
+    alert("Producto agregado al carrito")
+}
+
+function aplicarDescuento() {
+    alert("Descuento del 15% a productos que superen los $5000")
+
+    const productosConDescuento = carrito.filter((el) => el.Precio > 5000)
+    productosConDescuento.forEach((el) => {
+        el.Precio *= 0.85; // Aplica el 15% de descuento
+    })
+
+    console.log("Productos con descuento aplicado:", productosConDescuento)
+    console.log("Carrito actualizado:", carrito)
+}
+
+function calcularTotal() {
+    const total = carrito.reduce((acumulador, actual) => acumulador + actual.Precio, 0)
+    return total
+}
+
+// ARRAY LISTA PRODUCTOS
+
+const listaProductos = [
+    { Producto: "Arroz", Precio: 1500 },
+    { Producto: "Leche", Precio: 1500 },
+    { Producto: "Fideos", Precio: 1500 },
+    { Producto: "Agua", Precio: 1500 },
+    { Producto: "Harina", Precio: 1500 },
+    { Producto: "Chocolate", Precio: 1500 },
+    { Producto: "Hamburguesa", Precio: 1500 },
+    { Producto: "Salchicha", Precio: 1500 },
+    { Producto: "Gaseosa", Precio: 1500 },
+    { Producto: "Jamon", Precio: 1500 }
+]
+
+const carrito = []
 
 
-console.log("Productos con descuento aplicado:", productosConDescuento);
-console.log("Carrito actualizado:", carrito);
+// INICIO DEL PROGRAMA
 
-const totalCompra = carrito.reduce((acumulador, actual) => {
-    return acumulador += actual.Precio
-}, 0)
+const nombrePersona = saludarUsuario()
+mostrarProductosDisponibles(listaProductos)
+seleccionarProducto()
+aplicarDescuento()
+const totalCompra = calcularTotal()
 
-alert("El total de su compra es de: $" + totalCompra + "\n" + "Muchas gracias " + nombrePersona + " por tu compra")
+console.log ("Total Compra: " + totalCompra)
+alert("El total de su compra es de: $" + totalCompra + "\nMuchas gracias " + nombrePersona + " por tu compra")
 
 
 
