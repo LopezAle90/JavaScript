@@ -6,10 +6,6 @@
 // AL MENOS UN CICLO
 
 
-const nombrePersona = prompt("Ingrese su nombre")
-
-alert("Bienvenido " + nombrePersona + " al sitio de compras de productos")
-
 
 const listaProductos = [
     { Producto: "Arroz", Precio: 1500, },
@@ -27,6 +23,23 @@ const listaProductos = [
 const carrito = [];
 
 // PROGRAMA
+
+// PEDIDO NOMBRE
+
+const nombrePersona = prompt("Ingrese su nombre")
+
+alert("Bienvenido " + nombrePersona + " al sitio de compras de productos")
+
+
+let mensaje = "" // VARIABLE PARA ALMACENAR PRODUCTOS DISPONIBLES
+
+// FUNCION PARA RECORRER LA LISTA DE PRODUCTOS
+listaProductos.forEach(producto => {
+    mensaje += producto.Producto + " - $" + producto.Precio + "\n"
+})
+
+// SE MUESTRA LISTADO DE PRODUCTOS DISPONIBLES
+alert("Productos disponibles para comprar:\n" + mensaje);
 
 // BUSQUEDA DE PRODUCTO
 let buscarProducto = prompt("Producto a buscar (Escribe 'Fin' para terminar la selección de este tipo)");
@@ -49,7 +62,7 @@ while (buscarProducto.toLowerCase() != "fin") {
         alert("Producto agregado al carrito")
 
     } else {
-        alert("Producto no encontrado");
+        alert("Producto no encontrado \nProductos disponibles para comprar: \n" + mensaje);
     }
 
     buscarProducto = prompt("Producto a buscar (Escribe 'Fin' para terminar la selección de este tipo)");
@@ -73,6 +86,14 @@ const totalCompra = carrito.reduce((acumulador, actual) => {
     return acumulador += actual.Precio
 }, 0)
 
-alert("El total de su compra es de: $" + totalCompra)
+alert("El total de su compra es de: $" + totalCompra + "\n" + "Muchas gracias " + nombrePersona + " por tu compra")
+
+
+
+
+
+
+
+
 
 
