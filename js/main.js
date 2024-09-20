@@ -86,13 +86,3 @@ const totalCompra = calcularTotal()
 
 console.log ("Total Compra: " + totalCompra)
 alert("El total de su compra es de: $" + totalCompra + "\nMuchas gracias " + nombrePersona + " por tu compra")
-
-
-
-
-
-
-
-
-
-
