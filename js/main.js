@@ -1,88 +1,59 @@
-// FUNCIONES
-
-function saludarUsuario() {
-    const nombre = prompt("Ingrese su nombre")
-    alert("Bienvenido " + nombre + " al sitio de compras de productos")
-    return nombre
-}
-
-function mostrarProductosDisponibles(productos) {
-    let mensaje = ""
-    productos.forEach(producto => {
-        mensaje += producto.Producto + " - $" + producto.Precio + "\n"
-    })
-    alert("Productos disponibles para comprar:\n" + mensaje)
-}
-
-function seleccionarProducto() {
-    let productoBuscado = prompt("Producto a buscar (Escribe 'Fin' para terminar la selección)")
-    
-    while (productoBuscado.toLowerCase() !== "fin") {
-        const productoEncontrado = listaProductos.find((el) => el.Producto.toLowerCase() === productoBuscado.toLowerCase())
-
-        if (productoEncontrado) {
-            const cantidad = parseInt(prompt("Cantidad de producto"))
-            agregarAlCarrito(productoEncontrado, cantidad)
-        } else {
-            alert("Producto no encontrado")
-            mostrarProductosDisponibles(listaProductos); // Mostrar nuevamente los productos disponibles
-        }
-
-        productoBuscado = prompt("Producto a buscar (Escribe 'Fin' para terminar la selección)")
-    }
-}
-
-function agregarAlCarrito(producto, cantidad) {
-    const productoModificado = {
-        Producto: producto.Producto,
-        Precio: producto.Precio * cantidad
-    }
-    carrito.push(productoModificado)
-    alert("Producto agregado al carrito")
-}
-
-function aplicarDescuento() {
-    alert("Descuento del 15% a productos que superen los $5000")
-
-    const productosConDescuento = carrito.filter((el) => el.Precio > 5000)
-    productosConDescuento.forEach((el) => {
-        el.Precio *= 0.85; // Aplica el 15% de descuento
-    })
-
-    console.log("Productos con descuento aplicado:", productosConDescuento)
-    console.log("Carrito actualizado:", carrito)
-}
-
-function calcularTotal() {
-    const total = carrito.reduce((acumulador, actual) => acumulador + actual.Precio, 0)
-    return total
-}
-
-// ARRAY LISTA PRODUCTOS
-
-const listaProductos = [
-    { Producto: "Arroz", Precio: 1500 },
-    { Producto: "Leche", Precio: 1500 },
-    { Producto: "Fideos", Precio: 1500 },
-    { Producto: "Agua", Precio: 1500 },
-    { Producto: "Harina", Precio: 1500 },
-    { Producto: "Chocolate", Precio: 1500 },
-    { Producto: "Hamburguesa", Precio: 1500 },
-    { Producto: "Salchicha", Precio: 1500 },
-    { Producto: "Gaseosa", Precio: 1500 },
-    { Producto: "Jamon", Precio: 1500 }
+const imagenesZapas = [
+    "./assets/img/img01.png",
+    "./assets/img/img02.png",
+    "./assets/img/img03.png",
+    "./assets/img/img04.png",
+    "./assets/img/img05.png",
+    "./assets/img/img06.png",
+    "./assets/img/img07.png",
+    "./assets/img/img08.png",
+    "./assets/img/img09.png",
+    "./assets/img/img10.png",
+    "./assets/img/img11.png",
+    "./assets/img/img12.png",
+    "./assets/img/img13.png",
+    "./assets/img/img14.png",
+    "./assets/img/img15.png",
+    "./assets/img/img16.png",
+    "./assets/img/img17.png",
+    "./assets/img/img18.png",
+    "./assets/img/img19.png",
+    "./assets/img/img20.png",
+    "./assets/img/img21.png",
+    "./assets/img/img22.png",
+    "./assets/img/img23.png",
+    "./assets/img/img24.png",
+    "./assets/img/img25.png",
+    "./assets/img/img26.png",
+    "./assets/img/img27.png",
+    "./assets/img/img28.png",
+    "./assets/img/img29.png",
+    "./assets/img/img30.png",
+    "./assets/img/img31.png",
+    "./assets/img/img32.png",
+    "./assets/img/img33.png",
+    "./assets/img/img34.png",
+    "./assets/img/img35.png",
+    "./assets/img/img36.png",
 ]
 
-const carrito = []
-
+const rango = document.querySelector("#rango")
+const zapas = document.querySelector("#zapas")
 
 // INICIO DEL PROGRAMA
 
-const nombrePersona = saludarUsuario()
-mostrarProductosDisponibles(listaProductos)
-seleccionarProducto()
-aplicarDescuento()
-const totalCompra = calcularTotal()
+rango.value = localStorage.getItem("rango")
+zapas.src = imagenesZapas[localStorage.getItem("rango")]
 
-console.log ("Total Compra: " + totalCompra)
-alert("El total de su compra es de: $" + totalCompra + "\nMuchas gracias " + nombrePersona + " por tu compra")
+rango.addEventListener("input", (e) => {
+    let valorRango = e.target.value // me da el numero de rango que tiene el input
+    zapas.src = imagenesZapas[valorRango] // le asigna al id zapas del nodo html el elemento que este situado en el indice tomado de valorRango
+    localStorage.setItem ("rango" , valorRango) // Almacena el valor del rango q tiene el input 
+})
+
+
+
+
+
+
+
