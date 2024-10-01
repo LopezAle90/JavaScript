@@ -47,8 +47,9 @@ const producto1 = document.querySelector("#crocsCars")
 
 // INICIO DEL PROGRAMA
 
-rango.value = localStorage.getItem("rango")
-producto1.src = imagenesProducto1[localStorage.getItem("rango")]
+const valorRangoGuardado = localStorage.getItem("rango") || 0
+rango.value = valorRangoGuardado
+producto1.src = imagenesProducto1[valorRangoGuardado]
 
 rango.addEventListener("input", (e) => {
     let valorRango = e.target.value // me da el numero de rango que tiene el input
