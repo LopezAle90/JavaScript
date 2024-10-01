@@ -1,4 +1,9 @@
-const imagenesZapas = [
+const productos = { id: "Crocs-Cars", precio: 3500 }
+const productosEnJSON = JSON.stringify(productos)
+
+localStorage.setItem("Producto1", productosEnJSON)
+
+const imagenesProducto1 = [
     "./assets/img/img01.png",
     "./assets/img/img02.png",
     "./assets/img/img03.png",
@@ -38,18 +43,19 @@ const imagenesZapas = [
 ]
 
 const rango = document.querySelector("#rango")
-const zapas = document.querySelector("#zapas")
+const producto1 = document.querySelector("#crocsCars")
 
 // INICIO DEL PROGRAMA
 
 rango.value = localStorage.getItem("rango")
-zapas.src = imagenesZapas[localStorage.getItem("rango")]
+producto1.src = imagenesProducto1[localStorage.getItem("rango")]
 
 rango.addEventListener("input", (e) => {
     let valorRango = e.target.value // me da el numero de rango que tiene el input
-    zapas.src = imagenesZapas[valorRango] // le asigna al id zapas del nodo html el elemento que este situado en el indice tomado de valorRango
-    localStorage.setItem ("rango" , valorRango) // Almacena el valor del rango q tiene el input 
+    producto1.src = imagenesProducto1[valorRango] // le asigna al id zapas del nodo html el elemento que este situado en el indice tomado de valorRango
+    localStorage.setItem("rango", valorRango) // Almacena el valor del rango q tiene el input 
 })
+
 
 
 
