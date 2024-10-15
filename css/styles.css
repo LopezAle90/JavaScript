@@ -1,15 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+:root {
+    --clr-main: #4b33a8;
+    --clr-white: #ececec;
+    --clr-gray: #e2e2e2;
+    --clr-red: #961818;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Rubik' , sans-serif;
 }
 
-body{
-    min-height: 100vh;
-    background-color: white;
-    overflow: hidden;
-    display: grid;
-    place-items: center;
-    padding: 2rem;
+h1, h2, h3, h4, h5, h6, p, a, input, textarea, ul {
+    margin: 0;
+    padding: 0;
+}
 
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
 }
