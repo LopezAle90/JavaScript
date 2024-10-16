@@ -37,11 +37,13 @@
         </aside>
         <main>
             <h2 class="titulo-principal">Carrito</h2>
+
             <div class="contenedor-carrito">
                 <p class="carrito-vacio">Tu carrito está vacío</p>
-                <div class="carrito-productos">
+                <div class="carrito-productos disabled">
+
                     <div class="carrito-producto">
-                        <img src="./electrodomesticos/img01.jpg" alt="">
+                        <img class="carrito-producto-img" src="./electrodomesticos/img01.jpg" alt="">
                         <div class="carrito-producto-titulo">
                             <small>Titulo</small>
                             <h3>Electrodomestico 01</h3>
@@ -53,21 +55,15 @@
                         <div class="carrito-producto-precio">
                             <small>Precio</small>
                             <p>$3500</p>
-                            <div class="carrito-producto-subtotal">
-                                <small>Subtotal</small>
-                                <p>$3500</p>
-                            </div>
-                            <button class="carrito-producto-eliminar"><i class="bi bi-trash-fill"></i></button>
                         </div>
+                        <div class="carrito-producto-subtotal">
+                            <small>Subtotal</small>
+                            <p>$3500</p>
+                        </div>
+                        <button class="carrito-producto-eliminar"><i class="bi bi-trash-fill"></i></button>
                     </div>
-                </div>
-            </div>
-
-            <div class="contenedor-carrito">
-                <p class="carrito-vacio">Tu carrito está vacío</p>
-                <div class="carrito-productos">
                     <div class="carrito-producto">
-                        <img src="./electrodomesticos/img02.jpg" alt="">
+                        <img class="carrito-producto-img" src="./electrodomesticos/img02.jpg" alt="">
                         <div class="carrito-producto-titulo">
                             <small>Titulo</small>
                             <h3>Electrodomestico 02</h3>
@@ -79,17 +75,17 @@
                         <div class="carrito-producto-precio">
                             <small>Precio</small>
                             <p>$3500</p>
-                            <div class="carrito-producto-subtotal">
-                                <small>Subtotal</small>
-                                <p>$3500</p>
-                            </div>
-                            <button class="carrito-producto-eliminar"><i class="bi bi-trash-fill"></i></button>
                         </div>
+                        <div class="carrito-producto-subtotal">
+                            <small>Subtotal</small>
+                            <p>$3500</p>
+                        </div>
+                        <button class="carrito-producto-eliminar"><i class="bi bi-trash-fill"></i></button>
                     </div>
                 </div>
-                <div class="carrito acciones">
+                <div class="carrito-acciones disabled">
                     <div class="carrito-acciones-izq">
-                        <button class="carito-acciones-vaciar">Vaciar Carrito</button>
+                        <button class="carrito-acciones-vaciar">Vaciar Carrito</button>
                     </div>
                     <div class="carrito-acciones-der">
                         <div class="carrito-acciones-total">
@@ -98,17 +94,15 @@
                         </div>
                         <button class="carrito-acciones-comprar">COMPRAR AHORA</button>
                     </div>
-
                 </div>
-            </div>
+
+                <p class="carrito-comprado disabled">Muchas gracias por tu compra</p>
 
         </main>
 
-    </div>
 
 
-    </div>
-    <script src="./js/carrito.js"></script>
+        <script src="./js/carrito.js"></script>
 </body>
 
 </html>
