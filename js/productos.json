@@ -1,0 +1,134 @@
+[
+    {
+        "id": "electrodomestico-01",
+        "titulo": "Electrodomestico 01",
+        "img": "./assets/electrodomesticos/img01.jpg",
+        "categoria": {
+            "nombre": "Electrodomesticos",
+            "id": "electrodomesticos"
+        },
+        "precio": 3500
+    },
+
+    {
+        "id": "electrodomestico-02",
+        "titulo": "Electrodomestico 02",
+        "img": "./assets/electrodomesticos/img02.jpg",
+        "categoria": {
+            "nombre": "Electrodomesticos",
+            "id": "electrodomesticos"
+        },
+        "precio": 3500
+    },
+
+    {
+        "id": "electrodomestico-03",
+        "titulo": "Electrodomestico 03",
+        "img": "./assets/electrodomesticos/img03.jpg",
+        "categoria": {
+            "nombre": "Electrodomesticos",
+            "id": "electrodomesticos"
+        },
+        "precio": 3500
+    },
+
+    {
+        "id": "electrodomestico-04",
+        "titulo": "Electrodomestico 04",
+        "img": "./assets/electrodomesticos/img04.jpg",
+        "categoria": {
+            "nombre": "Electrodomesticos",
+            "id": "electrodomesticos"
+        },
+        "precio": 3500
+    },
+
+    {
+        "id": "bazar-01",
+        "titulo": "Bazar 01",
+        "img": "./assets/bazar/img01.jpg",
+        "categoria": {
+            "nombre": "Bazar",
+            "id": "bazar"
+        },
+        "precio": 3500
+    },
+
+    {
+        "id": "bazar-02",
+        "titulo": "Bazar 02",
+        "img": "./assets/bazar/img02.jpg",
+        "categoria": {
+            "nombre": "Bazar",
+            "id": "bazar"
+        },
+        "precio": 3500
+    },
+
+    {
+        "id": "bazar-03",
+        "titulo": "Bazar 03",
+        "img": "./assets/bazar/img03.jpg",
+        "categoria": {
+            "nombre": "Bazar",
+            "id": "bazar"
+        },
+        "precio": 3500
+    },
+
+    {
+        "id": "bazar-04",
+        "titulo": "Bazar 04",
+        "img": "./assets/bazar/img04.jpg",
+        "categoria": {
+            "nombre": "Bazar",
+            "id": "bazar"
+        },
+        "precio": 3500
+    },
+
+    {
+        "id": "juguetes-01",
+        "titulo": "Juguetes 01",
+        "img": "./assets/juguetes/img01.jpg",
+        "categoria": {
+            "nombre": "Juguetes",
+            "id": "juguetes"
+        },
+        "precio": 3500
+    },
+
+    {
+        "id": "juguetes-02",
+        "titulo": "Juguetes 02",
+        "img": "./assets/juguetes/img02.jpg",
+        "categoria": {
+            "nombre": "Juguetes",
+            "id": "juguetes"
+        },
+        "precio": 3500
+    },
+
+    {
+        "id": "juguetes-03",
+        "titulo": "Juguetes 03",
+        "img": "./assets/juguetes/img03.jpg",
+        "categoria": {
+            "nombre": "Juguetes",
+            "id": "juguetes"
+        },
+        "precio": 3500
+    },
+
+    {
+        "id": "juguetes-04",
+        "titulo": "Juguetes 04",
+        "img": "./assets/juguetes/img04.jpg",
+        "categoria": {
+            "nombre": "Juguetes",
+            "id": "juguetes"
+        },
+        "precio": 3500
+    }
+
+]

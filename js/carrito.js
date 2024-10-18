@@ -1,16 +1,4 @@
-let productosEnCarrito = localStorage.getItem("productos-en-carrito")
-productosEnCarrito = JSON.parse(productosEnCarrito)
-
-
-const contenedorCarritoVacio = document.querySelector("#carrito-vacio")
-const contenedorCarritoProductos = document.querySelector("#contenedor-productos")
-const contenedorCarritoAcciones = document.querySelector("#carrito-acciones")
-const contenedorCarritoComprado = document.querySelector("#carrito-comprado")
-let botonesEliminar = document.querySelectorAll(".carrito-producto-eliminar")
-const botonVaciar = document.querySelector(".carrito-acciones-vaciar")
-const contenedorTotal = document.querySelector("#total")
-const botonComprar = document.querySelector(".carrito-acciones-comprar")
-
+// FUNCIONES
 function cargarProductosEnCarrito() {
 
 
@@ -69,8 +57,6 @@ function cargarProductosEnCarrito() {
 
 }
 
-cargarProductosEnCarrito()
-
 function actualizarBotonesEliminar() {
 
     botonesEliminar = document.querySelectorAll(".carrito-producto-eliminar")
@@ -89,10 +75,23 @@ function eliminarDelCarrito(e) {
 
     localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito))
 
+    Toastify({
+        text: "Producto eliminado",
+        duration: 3000,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "linear-gradient(to right, #ff0000, #ff4d4d)",
+          borderRadius: "2rem "
+        },
+        onClick: function(){} // Callback after click
+      }).showToast();
+
+
 
 }
-
-botonVaciar.addEventListener("click", vaciarCarrito)
 
 function vaciarCarrito() {
 
@@ -109,8 +108,6 @@ function actualizarTotal() {
     total.innerText = `$${totalCalculado}`
 }
 
-botonComprar.addEventListener("click", comprarCarrito)
-
 function comprarCarrito() {
 
     productosEnCarrito.length = 0
@@ -124,3 +121,22 @@ function comprarCarrito() {
 
 }
 
+// DOM
+const contenedorCarritoVacio = document.querySelector("#carrito-vacio")
+const contenedorCarritoProductos = document.querySelector("#contenedor-productos")
+const contenedorCarritoAcciones = document.querySelector("#carrito-acciones")
+const contenedorCarritoComprado = document.querySelector("#carrito-comprado")
+let botonesEliminar = document.querySelectorAll(".carrito-producto-eliminar")
+const botonVaciar = document.querySelector(".carrito-acciones-vaciar")
+const contenedorTotal = document.querySelector("#total")
+const botonComprar = document.querySelector(".carrito-acciones-comprar")
+
+//INICIO
+
+let productosEnCarrito = localStorage.getItem("productos-en-carrito")
+productosEnCarrito = JSON.parse(productosEnCarrito)
+
+cargarProductosEnCarrito()
+
+botonVaciar.addEventListener("click", vaciarCarrito)
+botonComprar.addEventListener("click", comprarCarrito)
