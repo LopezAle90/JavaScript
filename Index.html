@@ -18,24 +18,24 @@
             <nav>
                 <ul class="menu">
                     <li>
-                        <button class="boton-menu boton-categoria active"> <i class="bi bi-hand-index-fill"></i>
+                        <button id="todos" class="boton-menu boton-categoria active"> <i class="bi bi-hand-index-fill"></i>
                             Todos los productos</button>
                     </li>
                     <li>
-                        <button class="boton-menu boton-categoria"> <i
+                        <button id="juguetes" class="boton-menu boton-categoria"> <i
                                 class="bi bi-hand-index-fill"></i>Juguetes</button>
                     </li>
                     <li>
-                        <button class="boton-menu boton-categoria"> <i
+                        <button id="electrodomesticos" class="boton-menu boton-categoria"> <i
                                 class="bi bi-hand-index-fill"></i>Electrodomesticos</button>
                     </li>
                     <li>
-                        <button class="boton-menu boton-categoria"> <i class="bi bi-hand-index-fill"></i>Bazar</button>
+                        <button id="bazar" class="boton-menu boton-categoria"> <i class="bi bi-hand-index-fill"></i>Bazar</button>
                     </li>
                     <li>
                         <a class="boton-menu boton-carrito " href="./carrito.html">
                             <i class="bi bi-cart-fill"></i>Carrito
-                            <span class="numerito">0</span>
+                            <span id="numerito" class="numerito">0</span>
                         </a>
                     </li>
                 </ul>
@@ -49,45 +49,10 @@
 
         <main>
 
-            <h2 class="titulo-principal">Todos los productos</h2>
+            <h2 class="titulo-principal" id="titulo-principal">Todos los productos</h2>
 
             <div class="contenedor-productos">
-                <div class="producto">
-                    <img class="producto-imagen" src="./electrodomesticos/img01.jpg" alt="">
-                    <div class="producto-detalles">
-                        <h3 class="producto-titulo">Electrodomestico 01</h3>
-                        <p class="producto-precio">$5000</p>
-                        <button class="producto-agregar">Agregar</button>
-                    </div>
-                </div>
-
-                <div class="producto">
-                    <img class="producto-imagen" src="./electrodomesticos/img02.jpg" alt="">
-                    <div class="producto-detalles">
-                        <h3 class="producto-titulo">Electrodomestico 02</h3>
-                        <p class="producto-precio">$5000</p>
-                        <button class="producto-agregar">Agregar</button>
-                    </div>
-                </div>
-
-                <div class="producto">
-                    <img class="producto-imagen" src="./electrodomesticos/img03.jpg" alt="">
-                    <div class="producto-detalles">
-                        <h3 class="producto-titulo">Electrodomestico 03</h3>
-                        <p class="producto-precio">$5000</p>
-                        <button class="producto-agregar">Agregar</button>
-                    </div>
-                </div>
-
-                <div class="producto">
-                    <img class="producto-imagen" src="./electrodomesticos/img04.jpg" alt="">
-                    <div class="producto-detalles">
-                        <h3 class="producto-titulo">Electrodomestico 04</h3>
-                        <p class="producto-precio">$5000</p>
-                        <button class="producto-agregar">Agregar</button>
-                    </div>
-                </div>
-
+                    <!-- Se rellena con JS -->
             </div>
 
         </main>
@@ -95,7 +60,7 @@
     </div>
 
 
-    <script src="js/main.js"></script>
+<script src="./js/main.js"></script>
 
 </body>
 

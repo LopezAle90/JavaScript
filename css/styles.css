@@ -74,12 +74,13 @@ i.bi.bi-hand-index-fill{
     font-weight: 600;
     cursor: pointer;
     align-items: center;
+    width: 100%;
+
 }
 
 .boton-menu.active{
     background-color: var(--clr-white);
     color: var(--clr-main);
-    width: 100%;
     border-top-left-radius: 1rem;
     border-bottom-left-radius: 1rem;
     position: relative;
